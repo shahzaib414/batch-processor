@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const fs = require('fs');
+const download = require('./download');
 
 const argv = yargs
 .option('file', {
@@ -37,4 +38,8 @@ fs.readFile(filePath, 'utf8', (err, fileContent) => {
     console.log('No URLs found in the file.');
     return;
   }
+  const downloadImagesAsync = urls.map((url) => download(url, storagePath));
+  Promise.all(downloadImagesAsync).then(() => {
+    console.log('Job is finished');
+  });
 })
