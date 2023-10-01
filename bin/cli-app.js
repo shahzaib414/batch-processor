@@ -1,10 +1,10 @@
 import { readFile } from 'fs';
-import arg from '../lib/commands';
-import batchProcessor from '../lib/batchProcessor';
+import arg from '../lib/commands.js';
+import batchProcessor from '../lib/batchProcessor.js';
+import { isValidUrl } from '../lib/utils/helper.js';
 
 export default (() => {
   const filePath = arg.file;
-
 readFile(filePath, 'utf8', (err, fileContent) => {
   if (err) {
     console.error(err);
