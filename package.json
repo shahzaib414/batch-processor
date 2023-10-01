@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/shahzaib414/getsafe-assignment/issues"
   },
-  "homepage": "https://github.com/shahzaib414/getsafe-assignment#readme"
+  "homepage": "https://github.com/shahzaib414/getsafe-assignment#readme",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
 }
