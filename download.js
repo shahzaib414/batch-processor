@@ -1,9 +1,10 @@
 const axios = require('axios');
 const fs = require('fs');
+const arg = require('./arguments')
 const path = require('path');
 
-module.exports =  async (url, storagePath) => {
-
+module.exports =  async (url) => {
+  const storagePath = arg.storage;
   try {
     if (!fs.existsSync(storagePath)) {
       fs.mkdirSync(storagePath);

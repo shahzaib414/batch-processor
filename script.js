@@ -1,23 +1,8 @@
-const yargs = require('yargs');
+const arg = require('./arguments')
 const fs = require('fs');
-const download = require('./download');
+const batchProcessor = require('./batchProcessor');
 
-const argv = yargs
-.option('file', {
-  alias: 'f',
-  describe: 'Specify a file path',
-  type: 'string',
-})
-.option('storage', {
-  alias: 's',
-  describe: 'Specify a local storage path',
-  type: 'string',
-})
-.help()
-.argv;
-
-const filePath = argv.file;
-const storagePath = argv.storage;
+const filePath = arg.file;
 
 const isValidUrl = (url) => {
   try {
@@ -38,8 +23,5 @@ fs.readFile(filePath, 'utf8', (err, fileContent) => {
     console.log('No URLs found in the file.');
     return;
   }
-  const downloadImagesAsync = urls.map((url) => download(url, storagePath));
-  Promise.all(downloadImagesAsync).then(() => {
-    console.log('Job is finished');
-  });
+  batchProcessor(urls)
 })
