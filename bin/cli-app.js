@@ -12,8 +12,7 @@ export default (() => {
   if(validateFileExtension(filePath, ['.txt'])) {
     readFile(filePath, 'utf8', (err, fileContent) => {
       if (err) {
-        console.error(err);
-        return;
+        throw new Error(`Error reading file: ${err.message}`);
       }
       const urls = fileContent.split(' ').filter((url) => isValidUrl(url));
       if (urls.length === 0) {
