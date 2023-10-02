@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "The Big Picture Corp",
   "type": "module",
+  "main": "bin/index.js",
   "scripts": {
-    "download": "node bin/cli-app.js"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
