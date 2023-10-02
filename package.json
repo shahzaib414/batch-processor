@@ -1,7 +1,7 @@
 {
   "name": "getsafe-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Big Picture Corp",
   "type": "module",
   "scripts": {
     "download": "node bin/cli-app.js"
@@ -19,5 +19,11 @@
   "dependencies": {
     "axios": "^1.5.1",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
   }
 }

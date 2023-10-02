@@ -1,7 +1,7 @@
 import { readFile } from 'fs';
 import arg from '../lib/commands.js';
-import batchProcessor from '../lib/batchProcessor.js';
-import { isValidUrl, validateFileExtension } from '../lib/utils/helper.js';
+import {batchDownloader} from '../lib/batchProcessor.js';
+import { parseUrls, validateFileExtension } from '../lib/utils/helper.js';
 
 export default (() => {
   if (!arg.file || !arg.storage) {
@@ -14,12 +14,12 @@ export default (() => {
       if (err) {
         throw new Error(`Error reading file: ${err.message}`);
       }
-      const urls = fileContent.split(' ').filter((url) => isValidUrl(url));
+      const urls = parseUrls(fileContent);
       if (urls.length === 0) {
         console.log('No URLs found in the file.');
         return;
       }
-      batchProcessor(urls)
+      batchDownloader(urls)
     })
   }
 })()
