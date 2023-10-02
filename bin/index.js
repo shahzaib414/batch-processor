@@ -1,6 +1,6 @@
 import { readFile } from 'fs';
 import arg from '../lib/commands.js';
-import {batchDownloader} from '../lib/batchProcessor.js';
+import batchProcessor from '../lib/batchProcessor.js';
 import { parseUrls, validateFileExtension } from '../lib/utils/helper.js';
 
 export default (() => {
@@ -19,7 +19,7 @@ export default (() => {
         console.log('No URLs found in the file.');
         return;
       }
-      batchDownloader(urls)
+      batchProcessor(urls)
     })
   }
 })()
