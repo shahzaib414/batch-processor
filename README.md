@@ -1,4 +1,13 @@
-# getsafe-assignment
+# Batch Processor for Downloading Image
+
+Small NodeJS library for efficiently downloading multiple files asynchronously and storing them in a local folder.
+
+accepts the following arguments
+
+`--file` path to the local file which contains a list of URLs separated by white space
+`--storage` Folder path where you want to save files
+`--batch` Number of files need to downloaded at the same time
+
 
 Install npm packages
 
@@ -14,7 +23,7 @@ npm install
 ### CLI App
 To Start Application
 ```
-yarn run start --file '<file_path_contains_urls_separated_by_white_space>' --storage '<folder_path_where_you_want_to_save_images>' --batch <no_of_urls_needs_to_process_at_a_time>
+yarn run start --file '<File_path>' --storage '<folder_path>' --batch <number>
 ```
 
 ### For Help
