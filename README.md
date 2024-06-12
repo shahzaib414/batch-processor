@@ -4,9 +4,9 @@ Small NodeJS library for efficiently downloading multiple files asynchronously a
 
 accepts the following arguments
 
-`--file` path to the local file which contains a list of URLs separated by white space
-`--storage` Folder path where you want to save files
-`--batch` Number of files need to downloaded at the same time
+`--file` path to the local file which contains a list of URLs separated by white space  
+`--storage` Folder path where you want to save files  
+`--batch` Number of files that need to be downloaded at the same time
 
 
 Install npm packages
